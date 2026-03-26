@@ -1,0 +1,62 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-headline: "Plus Jakarta Sans", sans-serif;
+
+  --color-primary: #006689;
+  --color-primary-container: #34a8da;
+  --color-secondary: #406376;
+  --color-secondary-container: #c3e8ff;
+  --color-tertiary: #895100;
+  --color-tertiary-container: #ffb86c;
+  --color-surface: #f6fafd;
+  --color-surface-container-low: #f0f4f7;
+  --color-surface-container-lowest: #ffffff;
+  --color-surface-container-high: #e5e9ec;
+  --color-surface-container-highest: #dfe3e6;
+  --color-on-surface: #171c1f;
+  --color-on-surface-variant: #3e484f;
+  --color-on-primary: #ffffff;
+  --color-on-primary-container: #00394f;
+  --color-on-secondary-container: #274b5d;
+  --color-error: #ba1a1a;
+  --color-error-container: #ffdad6;
+  --color-outline: #6e7880;
+  --color-outline-variant: #bec8d0;
+
+  --radius-lg: 2rem;
+  --radius-xl: 3rem;
+}
+
+@layer base {
+  body {
+    @apply bg-surface text-on-surface font-sans;
+  }
+}
+
+.glass-effect {
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+}
+
+.hud-line {
+  stroke-dasharray: 10;
+  stroke-dashoffset: 100;
+  animation: dash 5s linear infinite;
+}
+
+@keyframes dash {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+.perspective-container {
+  perspective: 1000px;
+}
+
+.map-tilt {
+  transform: rotateX(45deg) rotateZ(-15deg);
+}

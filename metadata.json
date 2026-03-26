@@ -1,0 +1,5 @@
+{
+  "name": "SkyFlow",
+  "description": "A futuristic indoor navigation and transit hub assistant with real-time HUD tracking and journey optimization.",
+  "requestFramePermissions": []
+}
