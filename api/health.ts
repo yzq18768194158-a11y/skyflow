@@ -1,5 +1,5 @@
 import type { IncomingMessage, ServerResponse } from 'node:http';
-import { json, methodNotAllowed } from './_lib/http';
+import { json, methodNotAllowed } from './_lib/http.js';
 
 export default async function handler(request: IncomingMessage, response: ServerResponse) {
   if (request.method !== 'GET') {
