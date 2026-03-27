@@ -197,11 +197,23 @@ export default function App() {
   }
 
   if (error && !journey) {
-    return <StatusScreen title="Unable to load data" message={error} onRetry={loadJourney} />;
+    return (
+      <StatusScreen
+        title="Unable to load data"
+        message={error}
+        onRetry={session ? () => void loadJourney(session.access_token) : undefined}
+      />
+    );
   }
 
   if (!journey) {
-    return <StatusScreen title="No journey found" message="The app server did not return a valid record." onRetry={loadJourney} />;
+    return (
+      <StatusScreen
+        title="No journey found"
+        message="The app server did not return a valid record."
+        onRetry={session ? () => void loadJourney(session.access_token) : undefined}
+      />
+    );
   }
 
   return (

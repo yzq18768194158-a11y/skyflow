@@ -42,6 +42,30 @@ The frontend runs on `http://localhost:3000` and proxies API requests to the Exp
 - `GET /api/journey`
 - `POST /api/journey/select-flight`
 
+## Deploy to Vercel
+
+This repo now includes Vercel-compatible serverless routes in [`api/`](/Users/yangziqing/Desktop/skyflow/api):
+
+- [`api/health.ts`](/Users/yangziqing/Desktop/skyflow/api/health.ts)
+- [`api/journey.ts`](/Users/yangziqing/Desktop/skyflow/api/journey.ts)
+- [`api/journey/select-flight.ts`](/Users/yangziqing/Desktop/skyflow/api/journey/select-flight.ts)
+
+When deploying the full app to Vercel:
+
+1. Import this GitHub repository into Vercel
+2. Keep the framework preset as `Vite`
+3. Add these environment variables in the Vercel project settings:
+   - `SUPABASE_URL`
+   - `SUPABASE_SERVICE_ROLE_KEY`
+   - `VITE_SUPABASE_URL`
+   - `VITE_SUPABASE_ANON_KEY`
+4. Redeploy
+
+If the frontend is also hosted on Vercel, `VITE_API_BASE_URL` can stay unset so the app uses same-origin `/api`.
+If the frontend is hosted elsewhere, set `VITE_API_BASE_URL` to your deployed Vercel backend URL, for example:
+
+`https://your-project.vercel.app/api`
+
 ## Notes
 
 - Supabase Auth is required for the app now. The frontend uses `VITE_SUPABASE_URL` and `VITE_SUPABASE_ANON_KEY` to sign users in.
