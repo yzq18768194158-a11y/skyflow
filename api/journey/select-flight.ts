@@ -1,5 +1,5 @@
 import type { IncomingMessage, ServerResponse } from 'node:http';
-import { selectRecommendedFlight } from '../../server/repository/journeyRepository';
+import { selectRecommendedFlight } from '../../server/repository/journeyRepository.js';
 import { json, methodNotAllowed, readJsonBody, requireAuth } from '../_lib/http.js';
 
 export default async function handler(request: IncomingMessage, response: ServerResponse) {

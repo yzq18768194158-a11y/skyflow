@@ -1,5 +1,5 @@
 import type { AppData, AlternativeFlight } from '../../shared/app-data';
-import { defaultJourney, defaultJourneySlug } from '../data/defaultJourney';
+import { defaultJourney, defaultJourneySlug } from '../data/defaultJourney.js';
 
 const supabaseUrl = process.env.SUPABASE_URL;
 const supabaseServiceRoleKey = process.env.SUPABASE_SERVICE_ROLE_KEY;

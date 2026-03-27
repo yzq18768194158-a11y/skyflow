@@ -1,5 +1,5 @@
 import type { IncomingMessage, ServerResponse } from 'node:http';
-import { getJourney } from '../server/repository/journeyRepository';
+import { getJourney } from '../server/repository/journeyRepository.js';
 import { json, methodNotAllowed, requireAuth } from './_lib/http.js';
 
 export default async function handler(request: IncomingMessage, response: ServerResponse) {
