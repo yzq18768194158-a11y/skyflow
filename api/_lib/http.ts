@@ -1,5 +1,4 @@
 import type { IncomingMessage, ServerResponse } from 'node:http';
-import { verifySupabaseAccessToken } from '../../server/auth';
 
 export interface ApiContext {
   user: {
@@ -28,6 +27,7 @@ export async function requireAuth(request: IncomingMessage, response: ServerResp
   }
 
   try {
+    const { verifySupabaseAccessToken } = await import('../../server/auth');
     const user = await verifySupabaseAccessToken(header.slice('Bearer '.length));
     return { user };
   } catch (error) {
